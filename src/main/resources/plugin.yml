@@ -1,0 +1,7 @@
+name: WorldProtectionTax
+version: ${project.version}
+main: cn.kevyn.worldprotectiontax.WorldProtectionTax
+api-version: 1.13
+authors: [ kevyn ]
+description: Limit players' behavior in the world you want to protect
+website: kevyn.cn

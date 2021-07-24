@@ -1,0 +1,10 @@
+# 启用的世界
+enabled-worlds:
+  - exampleWorld1
+  - exampleWorld2
+
+world:
+  tax: 2.0
+
+default:
+  tax: 1.0
