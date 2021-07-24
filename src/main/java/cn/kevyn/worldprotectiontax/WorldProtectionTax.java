@@ -9,14 +9,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class WorldProtectionTax extends JavaPlugin {
 
+    public static WorldProtectionTax INSTANCE;
+
     public final String ENABLE = ChatColor.BLUE + "[WorldProtectionTax Enabled! ";
     public final String DISABLE = ChatColor.RED + "[WorldProtectionTax] Disabled! ";
     public final String RELOAD = ChatColor.GREEN + "[WorldProtectionTax] Reloaded！";
 
     private Economy economy;
     private Permission permission;
-    private WPTListener listener;
     private ConfigHelper configHelper;
+
+    public WorldProtectionTax () {
+        INSTANCE = this;
+    }
 
     @Override
     public void onEnable() {
@@ -39,8 +44,7 @@ public final class WorldProtectionTax extends JavaPlugin {
             return;
         }
 
-        listener = new WPTListener(this);
-        getServer().getPluginManager().registerEvents(listener, this);
+        getServer().getPluginManager().registerEvents(new WPTListener(), this);
         getServer().getConsoleSender().sendMessage(ENABLE);
     }
 
